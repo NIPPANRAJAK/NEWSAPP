@@ -1,0 +1,41 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around ;
+    box-shadow:  0px 5px 7px -7px;
+}
+
+.header{
+    position: relative;
+    right: 120px;
+    font-weight: 800;
+    font-size: 35px;
+}
+
+.search input{
+    position: relative;
+    right: 170px;
+    width: 700px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: medium;
+    margin: 10px;
+}
+
+.search button{
+    position: relative;
+    right:170px;
+    width: 80px;
+    height: 35px;
+    margin: 7px;
+    border: none;
+    border-radius: 6px;
+    background-color: #197bf6;
+    color:white;
+    font-size: medium;
+    cursor: pointer;
+
+}
+.searchBar{
+    text-align: center;
+}

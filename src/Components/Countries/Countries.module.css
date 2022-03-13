@@ -1,0 +1,48 @@
+.container{
+    width: 220px;
+    height: max-content;
+    background-color: #d1e6f8;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+.header{
+    font-size: large;
+    font-weight: 700;
+    padding:0px 20px;
+}
+.lists{
+    background-color: white;
+    padding: 10px;
+    border-top: 1px solid #e8e8e8;
+}
+.lists button{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 200px;
+    font-size: medium;
+    background:none;
+    padding: 10px;
+    border: 1px solid #197bf6;
+    border-radius: 5px;
+    color: #197bf6;
+    outline-color: #197bf6;
+    cursor: pointer;
+    margin-right: 6px;
+    margin-bottom: 3px;
+}
+.lists button:hover{
+    background-color: #197bf6;
+    color: white;
+}
+
+.blackButton {
+    background-color: black;
+    color: white;
+}
+
+.whiteButton {
+    background-color: white;
+    color: black;
+}
+

@@ -1,0 +1,103 @@
+.container{
+    display: flex;
+    height: auto;
+    background-color: #C4ECED;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    align-items: stretch;
+    padding: 20px;
+    margin: 20px;
+    justify-content: space-around;
+    width: 100%;
+}
+.container:hover{
+    box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.3);
+}
+
+.imageContainer{
+    width:130px;
+    height: 80px;
+    padding: 3px;
+    border: 1px solid #eeeeee;
+}
+
+.imageContainer img{
+    height: 100%;
+    width: 100%;
+}
+
+.titleDescription{
+    display: flex;
+    padding: 5px;
+    width: 70%;
+    flex-direction: column;
+    position: relative;
+}
+.sourceAndShare{
+    color: #939aa1;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: small;
+    font-weight: 700;
+}
+
+.sourceAndShare button{
+    color: #197bf6;
+    outline: none;
+    border: none;
+    background: none;
+    padding: 0;
+}
+.sourceAndShare button:hover{
+    color: #005ed1;
+    cursor: pointer;
+}
+.titleText{
+    font-size: medium;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.titleText:hover{
+    text-decoration: underline;
+    color: #197bf6;
+}
+.source{
+    color: #939aa1;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: small;
+    font-weight: 700;
+}
+.expand{
+    display: block;
+}
+.collapse{
+    display: none;
+}
+.description{
+    width: 100%;
+    font-weight: 700;
+}
+.descriptionText{
+    color: #939aa1;
+    font-weight: normal;
+    line-height: 22px;
+}
+.knowMore{
+    color:#197bf6;
+    cursor: pointer;
+}
+.knowMore:hover{
+    text-decoration: underline;
+    color: #005ed1;
+}
+.sourceAndShare div i{
+    color: #197bf6;
+    margin-left: 10px;
+}
+.sourceAndShare div i:hover{
+    color: #005ed1;
+    cursor:pointer
+}

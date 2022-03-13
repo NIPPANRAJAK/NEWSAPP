@@ -1,0 +1,41 @@
+.container{
+    height: 267px;
+    padding: 10px;
+    width: 10%;
+    
+}
+.lists{
+    border-bottom: 1px solid #e8e8e8;
+    border-top: 1px solid #e8e8e8;
+}
+.header{
+    font-size: large;
+    font-weight: 600;
+}
+.lists button{
+    width: 100%;
+    font-size: medium;
+    border: 0px ;
+    outline: none;
+    background-color: transparent;
+    text-align: left;
+    padding: 7px;
+    color: #919495;
+}
+
+.lists button i{
+    width: 15%;
+}
+
+.lists button span{
+    width: 85%;
+}
+
+.lists button:hover{
+    background-color: #eeeeee;
+    color: black;
+}
+
+.SelectC{
+    width: 100px;
+}
