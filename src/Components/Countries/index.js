@@ -1,26 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import styles from "./Countries.module.css";
-const Countries = ({ countryClick, countryList, countryChossen, forLoader }) => {
-    const [active, setActive] = useState("")
+const Countries = ({ countryList, countryChossen, countryClick, forLoader }) => {
+    const [active, setActive] = useState()
 
-    const changeColor = (countryCode) => {
-        setActive({ active: countryCode })
-        console.log("-------------->", countryCode)
-    }
+    const changeColor = useCallback(() => {
+        setActive(countryChossen)
+    }, [countryChossen])
 
-    const click = (item, countryCode) => {
+    const click = (item) => {
         countryClick(item);
-        forLoader(countryCode)
-        changeColor(countryCode)
+        typeof (forLoader) == 'function' && forLoader()
+        changeColor()
     }
 
     return (
         <div className={styles.container}>
             <p className={styles.header}>Select country</p>
             <div className={styles.lists}>
-                {console.log("==========>", countryChossen)}
+                {/* {console.log("==========>", countryChossen)} */}
                 {
-                    countryList.map((countryCode) => < button className={countryCode == countryChossen ? "whiteButton" : "blackButton"} onClick={() => click(countryCode)}>{countryCode}</button>)
+                    countryList.map((country) => {
+                        console.log(countryChossen == country.Code ? styles.blackButton : styles.whiteButton)
+                        return < button className={countryChossen == country.Code ? styles.blackButton : styles.whiteButton} onClick={() => click(country.CountryName)}>{country.CountryName}</button>
+                    })
 
                 }
             </div>

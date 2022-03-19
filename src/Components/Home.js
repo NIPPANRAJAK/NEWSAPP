@@ -7,13 +7,13 @@ import { getCode } from "country-list";
 import styles from "./Home.module.css";
 
 const categoryList = [{ name: 'Business', logo: 'far fa-building' }, { name: 'Technology', logo: 'fas fa-microchip' }, { name: 'Entertainment', logo: 'fas fa-film' }, { name: 'Sports', logo: 'far fa-futbol' }, { name: 'Health', logo: 'fas fa-first-aid' }, { name: 'Science', logo: 'fas fa-flask' }]
-const countryList = ['Argentina', 'Australia', 'Austria', 'Belgium', 'Brazil', 'Canada', 'China', 'Colombia', 'Cuba', 'Egypt', 'Germany', 'Greece', 'Hong Kong', 'Iceland', 'India', 'Ireland', 'Italy', 'Japan', 'Mexico', 'Netherlands', 'Peru', 'Portugal', 'Russia', 'Turkey', 'Spain', 'Ukraine']
+const countryList = [{ CountryName: 'Argentina', Code: 'AR' }, { CountryName: 'Australia', Code: 'AU' }, { CountryName: 'Austria', Code: 'AT' }, { CountryName: 'Belgium', Code: 'BE' }, { CountryName: 'Brazil', Code: "BR" }, { CountryName: 'Canada', Code: 'CA' }, { CountryName: 'China', Code: 'CH' }, { CountryName: 'Colombia', Code: 'CO' }, { CountryName: 'Cuba', Code: 'CU' }, { CountryName: 'Egypt', Code: 'EG' }, { CountryName: 'Germany', Code: 'DE' }, { CountryName: 'Greece', Code: 'GR' }, { CountryName: 'Hong Kong', Code: 'HK' }, { CountryName: 'Iceland', Code: 'IC' }, { CountryName: 'India', Code: 'IN' }, { CountryName: 'Ireland', Code: 'IR' }, { CountryName: 'Italy', Code: 'IT' }, { CountryName: 'Japan', Code: 'JA' }, { CountryName: 'Mexico', Code: 'ME' }, { CountryName: 'Netherlands', Code: 'NE' }, { CountryName: 'Peru', Code: 'PE' }, { CountryName: 'Portugal', Code: 'PO' }, { CountryName: 'Russia', Code: 'RU' }, { CountryName: 'Turkey', Code: 'TU' }, { CountryName: 'Spain', Code: 'SP' }, { CountryName: 'Ukraine', Code: 'UK' }]
 
 const Home = () => {
 
     const [newsArray, updateArray] = useState([]);
-    const [loader, setLoader] = useState(false)
-    const [countryChossen, setCountryChossen] = useState('In')
+    const [loader, setLoader] = useState(false);
+    const [countryChossen, setCountryChossen] = useState("in");
 
     useEffect(() => {
         fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=86e2464e6dfe4afe89b811527a204863`).then((response) => {
@@ -51,26 +51,25 @@ const Home = () => {
     }
 
     const forLoader = () => {
-        setLoader({
-            loader: true,
-        });
+        setLoader(true);
     };
 
-    const countries = (query) => {
+    const countries = async (query) => {
         let countryCode = getCode(query)
-        fetch(`https://newsapi.org/v2/top-headlines?country=${countryCode}&sortBy=popularity&apiKey=86e2464e6dfe4afe89b811527a204863`).then((response) => {
+        await fetch(`https://newsapi.org/v2/top-headlines?country=${countryCode}&sortBy=popularity&apiKey=86e2464e6dfe4afe89b811527a204863`).then((response) => {
             return response.json();
         }).then((json) => {
             updateArray(json.articles)
         }).catch(() => {
             console.log("Error in fetch")
         })
-        setCountryChossen({ countryChossen: countryCode })
-        setLoader({ loader: false })
-        console.log(countryChossen)
+        setLoader(false);
+        console.log("--------------->")
+        setCountryChossen(countryCode)
+        // console.log(countryChossen)
     }
 
-
+    console.log("loader", loader)
 
     return (
         <div>
